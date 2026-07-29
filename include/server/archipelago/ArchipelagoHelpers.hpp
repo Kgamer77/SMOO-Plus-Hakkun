@@ -1475,9 +1475,11 @@ __attribute__((used)) static const char16_t miscIcons2[] = {0x0037, 0x0040};
 __attribute__((used)) static const char16_t color1[] = {0x0000, 0x0001, 0x0002, 0x0003, 0x0004, 0x0005, 0x0006, 0x0007, 0xffff};
 __attribute__((used)) static const char16_t color2[] = {0x0006, 0x0005, 0x0004, 0x0005, 0x0005, 0x0004, 0x0005, 0x0000, 0x0000};
 
-__attribute__((used)) static const char16_t colors[] = {0xf777, 0x0001, 0x0002, 0x0003, 0x0004, 0x0005, 0x0006, 0x0007, 0xffff};
+__attribute__((used)) static const char16_t colors[] = {0xF777, 0x0001, 0x0002, 0x0003, 0x0004, 0x0005, 0x0006, 0x0007,
+                                                        0x0008, 0x0009, 0x000A, 0x000B, 0x000C, 0x000D, 0xFFFF};
 
 enum ProjectTextColors {
+    // Vanilla
     Black = 0,
     Yellow = 1,
     White = 2,
@@ -1486,7 +1488,16 @@ enum ProjectTextColors {
     Blue = 5,
     Gray = 6,
     Rough = 7,
-    ResetColor = 8,
+
+    // Custom
+    Magenta = 8,
+    Cyan = 9,
+    SlateBlue = 10,
+    Plum = 11,
+    Salmon = 12,
+    Orange = 13,
+
+    ResetColor = 14,
 };
 
 __attribute__((used)) static const char* itemSystemMessageFiles[] = {

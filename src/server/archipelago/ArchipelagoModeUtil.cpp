@@ -430,7 +430,7 @@ void ArchipelagoMode::buildCappyMessage() {
         }
 
         if (curMessage.itemType < CappyMessageTypes::CappyRegionalCoin) {
-            getColor(ProjectTextColors::Yellow, &mSafeCappyBuffer, tagIndex);
+            getColor(ProjectTextColors::Salmon, &mSafeCappyBuffer, tagIndex);
             tagIndex++;
             appendUtf8ToUtf16(kingdoms[curMessage.itemIndex], &mSafeCappyBuffer);
         }
@@ -452,7 +452,7 @@ void ArchipelagoMode::buildCappyMessage() {
         }
 
         mSafeCappyBuffer.append(u" ");
-        getColor(ProjectTextColors::Yellow, &mSafeCappyBuffer, tagIndex);
+        getColor(ProjectTextColors::Plum, &mSafeCappyBuffer, tagIndex);
         tagIndex++;
         appendUtf8ToUtf16(SMOItems[curMessage.itemType], &mSafeCappyBuffer);
         getColor(ProjectTextColors::ResetColor, &mSafeCappyBuffer, tagIndex);
@@ -466,7 +466,7 @@ void ArchipelagoMode::buildCappyMessage() {
     }
 
     if (hasName) {
-        getColor(ProjectTextColors::Blue, &mSafeCappyBuffer, tagIndex);
+        getColor(ProjectTextColors::Magenta, &mSafeCappyBuffer, tagIndex);
         tagIndex++;
         appendUtf8ToUtf16(mSlotNames[curMessage.slotNameIndex].cstr(), &mSafeCappyBuffer);
         getColor(ProjectTextColors::ResetColor, &mSafeCappyBuffer, tagIndex);
@@ -483,6 +483,7 @@ void ArchipelagoMode::buildCappyMessage() {
             break;
         }
     }
+    getColor(ProjectTextColors::ResetColor, &mSafeCappyBuffer, tagIndex);
     mSafeCappyBuffer.append(u".");
     mSafeCappyBuffer.replaceChar(u'\xf777', u'\x0000');
 

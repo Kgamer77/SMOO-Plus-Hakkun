@@ -615,6 +615,10 @@ void InstallArchipelagoHooks() {
     hk::hook::writeBranchLinkAtMainOffset(0x1dcb4c, isExistCappyLabelInStageMessageHook);
     hk::hook::writeBranchLinkAtMainOffset(0x1dcb84, getStageMessageCappyStringHook);
 
+    // #14 is the number of colors. This value must be updated when adding or removing colors
+    hk::hook::a64::assemble<"MOV W2, #14">().installAtMainOffset(0x8ba880);
+    hk::hook::writeBranchLinkAtMainOffset(0x8ba9fc, setCustomGradationColors);
+
     // Force oder of world unlock selections
     // calcNextLockedLayoutHook.installAtSym<
     //     "_ZN16GameDataFunction32calcNextLockedWorldIdForWorldMapEPKN2al11LayoutActorEi">();
